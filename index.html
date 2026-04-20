@@ -61,7 +61,7 @@
                         <path d="M20.84 20.84L20.5529 20.5529C19.7158 21.3908 18.5701 21.8494 17.4091 21.7732C16.2482 21.6971 15.1754 21.094 14.52 20.12L14.4898 20.0821C13.838 19.1165 12.7524 18.4849 11.5658 18.3758C10.3792 18.2667 9.20495 18.7063 8.42 19.55L3 24L4.55 19.3C5.3793 18.4591 5.8558 17.2991 5.852 16.1162C5.8482 14.9333 5.3637 13.7767 4.53 12.94L4.55001 12.92L20.84 20.84Z" stroke="currentColor" stroke-width="1.5"/>
                     </svg>
                 </button>
-                <button class="icon-btn cart-btn" style="position: relative;">
+                 <button class="icon-btn cart-btn" id="headerCartBtn" style="position: relative;">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path d="M3 6L6 21H21L18 6H3Z" stroke="currentColor" stroke-width="1.5"/>
                         <path d="M9 21V10C9 9.44772 9.44773 9 10 9H11C11.5523 9 12 9.44772 12 10V21" stroke="currentColor" stroke-width="1.5"/>
@@ -601,26 +601,26 @@
             }
         });
 
-        // Header icons functionality
-        document.querySelectorAll('.icon-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                const svg = this.querySelector('svg');
-                const path = svg ? svg.innerHTML : '';
-                
-                if (path.includes('M11 21')) {
-                    const searchTerm = prompt('🔍 ¿Qué buscas?');
-                    if (searchTerm) {
-                        waChatBox.classList.add('active');
-                        addMessage(`Busco: ${searchTerm}`);
-                    }
-                } else if (path.includes('M20.84')) {
-                    alert('❤️ Tus favoritos se guardarán pronto');
-                } else if (path.includes('M3 6')) {
-                    openCart();
-                }
-            });
-        });
+         // Header icons functionality
+         document.querySelectorAll('.icon-btn').forEach(btn => {
+             btn.addEventListener('click', function(e) {
+                 e.stopPropagation();
+                 const svg = this.querySelector('svg');
+                 const path = svg ? svg.innerHTML : '';
+                 
+                 if (path.includes('M11 21')) {
+                     const searchTerm = prompt('🔍 ¿Qué buscas?');
+                     if (searchTerm) {
+                         waChatBox.classList.add('active');
+                         addMessage(`Busco: ${searchTerm}`);
+                     }
+                 } else if (path.includes('M20.84')) {
+                     alert('❤️ Tus favoritos se guardarán pronto');
+                 } else if (this.id === 'headerCartBtn' || path.includes('M3 6')) {
+                     openCart();
+                 }
+             });
+         });
 
         // Header scroll effect
         window.addEventListener('scroll', function() {
