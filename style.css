@@ -147,8 +147,8 @@ button {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(180deg, rgba(17,17,17,0.2) 0%, rgba(17,17,17,0.8) 100%),
-                url('https://images.unsplash.com/photo-1551959839-4339539b61b5?w=1920&h=1080&fit=crop&q=85') center/cover;
+    background: linear-gradient(180deg, rgba(17,17,17,0.15) 0%, rgba(17,17,17,0.75) 100%),
+                url('https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?w=1920&q=90') center/cover;
     z-index: 0;
 }
 
@@ -449,4 +449,198 @@ a:focus,
 button:focus {
     outline: 2px solid var(--brand-blue);
     outline-offset: 2px;
+}
+
+/* WhatsApp Chat Widget */
+.wa-chat-widget {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1000;
+    font-family: 'Roboto', sans-serif;
+}
+
+.wa-chat-toggle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #25D366;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wa-chat-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+}
+
+.wa-chat-toggle svg {
+    fill: white;
+}
+
+.wa-chat-box {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 380px;
+    height: 500px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.wa-chat-box.active {
+    display: flex;
+    animation: waSlideUp 0.3s ease;
+}
+
+@keyframes waSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.wa-chat-header {
+    background: #25D366;
+    color: white;
+    padding: 16px 20px;
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wa-chat-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.wa-chat-messages {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    background: #f5f5f5;
+}
+
+.wa-message {
+    max-width: 80%;
+    padding: 12px 16px;
+    border-radius: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.wa-message-in {
+    background: white;
+    color: #333;
+    border-bottom-left-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.wa-message-out {
+    background: #25D366;
+    color: white;
+    margin-left: auto;
+    border-bottom-right-radius: 4px;
+}
+
+.wa-chat-options {
+    padding: 12px;
+    background: white;
+    border-top: 1px solid #eee;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.wa-option-btn {
+    background: #f0f0f0;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.wa-option-btn:hover {
+    background: #25D366;
+    color: white;
+}
+
+.wa-chat-input {
+    padding: 12px;
+    background: white;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 8px;
+}
+
+.wa-chat-input input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 24px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.wa-chat-input input:focus {
+    border-color: #25D366;
+}
+
+.wa-send-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #25D366;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+}
+
+.wa-send-btn:hover {
+    background: #128C7E;
+}
+
+.wa-send-btn svg {
+    fill: white;
+    transform: rotate(-90deg);
+}
+
+@media (max-width: 480px) {
+    .wa-chat-widget {
+        bottom: 16px;
+        right: 16px;
+    }
+    
+    .wa-chat-box {
+        width: calc(100vw - 32px);
+        height: calc(100vh - 120px);
+        right: -8px;
+    }
 }
