@@ -5,6 +5,9 @@
 }
 
 :root {
+    --brand-blue: #0047AB;
+    --brand-blue-dark: #003380;
+    --brand-blue-light: #0066CC;
     --nike-black: #111111;
     --nike-white: #FFFFFF;
     --snow: #FAFAFA;
@@ -46,7 +49,7 @@ button {
 
 /* Promo Banner */
 .promo-banner {
-    background: var(--nike-black);
+    background: var(--brand-blue);
     color: var(--nike-white);
     text-align: center;
     padding: 8px;
@@ -61,6 +64,7 @@ button {
     position: sticky;
     top: 0;
     z-index: 100;
+    border-bottom: 1px solid var(--border-secondary);
 }
 
 .header-inner {
@@ -78,11 +82,12 @@ button {
     font-size: 22px;
     font-weight: 700;
     letter-spacing: 2px;
-    color: var(--nike-black);
+    color: var(--brand-blue);
+    text-transform: uppercase;
 }
 
 .logo span {
-    color: var(--nike-red);
+    color: var(--nike-black);
 }
 
 .nav {
@@ -100,7 +105,7 @@ button {
 }
 
 .nav-link:hover {
-    color: var(--text-secondary);
+    color: var(--brand-blue);
 }
 
 .nav-icons {
@@ -115,12 +120,15 @@ button {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: var(--light-gray);
     transition: background 0.2s ease;
 }
 
 .icon-btn:hover {
-    background: var(--hover-gray);
+    background: var(--light-gray);
+}
+
+.icon-btn svg {
+    stroke: var(--nike-black);
 }
 
 /* Buttons */
@@ -132,27 +140,27 @@ button {
     text-transform: uppercase;
     letter-spacing: 1px;
     border-radius: 30px;
-    transition: background 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .btn-primary {
-    background: var(--nike-black);
+    background: var(--brand-blue);
     color: var(--nike-white);
 }
 
 .btn-primary:hover {
-    background: var(--text-secondary);
+    background: var(--brand-blue-dark);
 }
 
 .btn-secondary {
     background: transparent;
-    color: var(--nike-black);
-    border: 1.5px solid var(--border-secondary);
+    color: var(--nike-white);
+    border: 1.5px solid var(--nike-white);
 }
 
 .btn-secondary:hover {
-    border-color: var(--text-secondary);
-    background: var(--hover-gray);
+    background: var(--nike-white);
+    color: var(--brand-blue);
 }
 
 /* Hero */
@@ -176,8 +184,8 @@ button {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(180deg, rgba(17,17,17,0.3) 0%, rgba(17,17,17,0.7) 100%),
-                url('https://images.unsplash.com/photo-1517836357463-d25ddfac86d1?w=1920&h=1080&fit=crop') center/cover;
+    background: linear-gradient(180deg, rgba(0,71,171,0.85) 0%, rgba(0,51,128,0.95) 100%),
+                url('https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?w=1920&h=1080&fit=crop') center/cover;
     z-index: 0;
 }
 
@@ -217,7 +225,8 @@ button {
 
 /* Product Grid */
 .products-featured,
-.products-grid-alt {
+.products-grid-alt,
+.accessories {
     max-width: 1920px;
     margin: 0 auto;
     padding: 0 48px 48px;
@@ -238,17 +247,30 @@ button {
     background: var(--light-gray);
     aspect-ratio: 1;
     overflow: hidden;
+    position: relative;
 }
 
 .product-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: opacity 0.2s ease;
+    transition: transform 0.3s ease;
 }
 
 .product-card:hover .product-img img {
-    opacity: 0.85;
+    transform: scale(1.05);
+}
+
+.badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--brand-blue);
+    color: var(--nike-white);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    text-transform: uppercase;
 }
 
 .product-info {
@@ -270,8 +292,15 @@ button {
 
 .product-price {
     font-size: 14px;
-    font-weight: 500;
-    color: var(--nike-black);
+    font-weight: 700;
+    color: var(--brand-blue);
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: var(--text-secondary);
+    font-weight: 400;
+    margin-right: 8px;
 }
 
 /* Category Hero */
@@ -290,8 +319,8 @@ button {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(90deg, rgba(17,17,17,0.8) 0%, rgba(17,17,17,0.4) 100%),
-                url('https://images.unsplash.com/photo-1556906781-9a412961c28c?w=1920&h=600&fit=crop') center/cover;
+    background: linear-gradient(90deg, rgba(0,71,171,0.9) 0%, rgba(0,51,128,0.7) 100%),
+                url('https://images.unsplash.com/photo-1551959839-4339539b61b5?w=1920&h=600&fit=crop') center/cover;
     z-index: 0;
 }
 
@@ -310,8 +339,8 @@ button {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(90deg, rgba(17,17,17,0.8) 0%, rgba(17,17,17,0.4) 100%),
-                url('https://images.unsplash.com/photo-1571015553457-d76885282207?w=1920&h=600&fit=crop') center/cover;
+    background: linear-gradient(90deg, rgba(0,71,171,0.9) 0%, rgba(0,51,128,0.7) 100%),
+                url('https://images.unsplash.com/photo-1510925758619-12696f5b9641?w=1920&h=600&fit=crop') center/cover;
     z-index: 0;
 }
 
@@ -368,7 +397,7 @@ button {
 }
 
 .footer-links a:hover {
-    color: var(--nike-black);
+    color: var(--brand-blue);
 }
 
 .footer-bottom {
@@ -413,6 +442,7 @@ button {
     .header-inner,
     .products-featured,
     .products-grid-alt,
+    .accessories,
     .hero,
     .category-hero,
     .category-hero-women {
@@ -456,6 +486,6 @@ button {
 /* Focus States */
 a:focus,
 button:focus {
-    outline: 2px solid var(--link-blue);
+    outline: 2px solid var(--brand-blue);
     outline-offset: 2px;
 }
