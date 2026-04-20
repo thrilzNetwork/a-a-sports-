@@ -416,26 +416,27 @@
         let selectedQty = 1;
         
         // Product cards click handler
-        document.querySelectorAll('.product-card, .category-card').forEach(card => {
-            card.addEventListener('click', function(e) {
-                e.preventDefault();
-                const name = this.dataset.name || '';
-                const category = this.dataset.category || '';
-                const price = this.dataset.price || '';
-                const desc = this.dataset.desc || '';
-                const img = this.dataset.img || '';
-                
-                if (!name) return;
-                
-                document.getElementById('modalName').textContent = name;
-                document.getElementById('modalCategory').textContent = category;
-                document.getElementById('modalPrice').textContent = price;
-                document.getElementById('modalDesc').textContent = desc;
-                document.getElementById('modalImage').src = img;
-                
-                productModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
+        document.addEventListener('click', function(e) {
+            const card = e.target.closest('.product-card, .category-card');
+            if (!card) return;
+            
+            e.preventDefault();
+            const name = card.dataset.name || '';
+            const category = card.dataset.category || '';
+            const price = card.dataset.price || '';
+            const desc = card.dataset.desc || '';
+            const img = card.dataset.img || '';
+            
+            if (!name) return;
+            
+            document.getElementById('modalName').textContent = name;
+            document.getElementById('modalCategory').textContent = category;
+            document.getElementById('modalPrice').textContent = price;
+            document.getElementById('modalDesc').textContent = desc;
+            document.getElementById('modalImage').src = img;
+            
+            productModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
         });
         
         function closeModal() {
