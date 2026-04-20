@@ -3,121 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A&A SPORT - Más que una marca, una nueva historia</title>
+    <title>A&A SPORT | Pasión a Tu Medida</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="promo-banner">
+        <p>ENVÍO GRÁTIS EN PEDIDOS MAYORES A $50 · MEMBER EXCLUSIVE: 20% DTO EXTRA</p>
+    </div>
+
     <header class="header">
-        <div class="container header-content">
-            <div class="logo">A&A <span>SPORT</span></div>
+        <div class="header-inner">
+            <a href="#" class="logo">A&A<span>SPORT</span></a>
             <nav class="nav">
-                <a href="#inicio">Inicio</a>
-                <a href="#hombres">Hombres</a>
-                <a href="#mujeres">Mujeres</a>
-                <a href="#nosotros">Nosotros</a>
-                <a href="#contacto">Contacto</a>
+                <a href="#" class="nav-link">Nuevo</a>
+                <a href="#" class="nav-link">Hombres</a>
+                <a href="#" class="nav-link">Mujeres</a>
+                <a href="#" class="nav-link">Sale</a>
             </nav>
-            <button class="menu-toggle">☰</button>
+            <div class="nav-icons">
+                <button class="icon-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M11 21C15.4183 21 19 17.4183 19 13C19 8.58172 15.4183 5 11 5C6.58172 5 3 8.58172 3 13C3 17.4183 6.58172 21 11 21Z" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                </button>
+                <button class="icon-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M20.84 20.84L20.5529 20.5529C19.7158 21.3908 18.5701 21.8494 17.4091 21.7732C16.2482 21.6971 15.1754 21.094 14.52 20.12L14.4898 20.0821C13.838 19.1165 12.7524 18.4849 11.5658 18.3758C10.3792 18.2667 9.20495 18.7063 8.42 19.55L3 24L4.55 19.3C5.3793 18.4591 5.8558 17.2991 5.852 16.1162C5.8482 14.9333 5.3637 13.7767 4.53 12.94L4.55001 12.92L20.84 20.84Z" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                </button>
+                <button class="icon-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 6L6 21H21L18 6H3Z" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M9 21V10C9 9.44772 9.44773 9 10 9H11C11.5523 9 12 9.44772 12 10V21" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                </button>
+            </div>
         </div>
     </header>
 
-    <section class="hero" id="inicio">
+    <section class="hero">
         <div class="hero-content">
-            <h1>PASIÓN A TU MEDIDA</h1>
-            <p>Más que una marca, una nueva historia</p>
-            <a href="#productos" class="btn btn-primary">VER COLECCIÓN</a>
+            <h1 class="hero-title">JUST<br>DO IT</h1>
+            <p class="hero-subtitle">Pasión a tu medida. Más que una marca, una nueva historia.</p>
+            <a href="#products" class="btn btn-primary">COMPRAR AHORA</a>
         </div>
     </section>
 
-    <section class="promo-banner">
-        <p>ENVÍO GRÁTIS EN PEDIDOS MAYORES A $50 | 🏆 LOS PARTIDOS SE JUEGAN EN LA CANCHA</p>
-    </section>
-
-    <section class="products" id="productos">
-        <div class="container">
-            <h2 class="section-title">NUESTRA COLECCIÓN</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <div class="placeholder-img">👕</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Camiseta Atlético</h3>
-                        <p class="price">$29.99</p>
-                        <button class="btn btn-secondary">Agregar</button>
-                    </div>
+    <section class="products-featured">
+        <h2 class="section-title">DESTACADOS</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop" alt="Nike Air Max">
                 </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <div class="placeholder-img">👖</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Pantalón Deportivo</h3>
-                        <p class="price">$49.99</p>
-                        <button class="btn btn-secondary">Agregar</button>
-                    </div>
+                <div class="product-info">
+                    <h3 class="product-name">Air Max Performance</h3>
+                    <p class="product-category">Running</p>
+                    <p class="product-price">$189.99</p>
                 </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <div class="placeholder-img">👟</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Zapatillas Running</h3>
-                        <p class="price">$89.99</p>
-                        <button class="btn btn-secondary">Agregar</button>
-                    </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9cb?w=600&h=600&fit=crop" alt="Nike Air Force">
                 </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <div class="placeholder-img">🧢</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Gorra Deportiva</h3>
-                        <p class="price">$19.99</p>
-                        <button class="btn btn-secondary">Agregar</button>
-                    </div>
+                <div class="product-info">
+                    <h3 class="product-name">Air Force 1 '07</h3>
+                    <p class="product-category">Lifestyle</p>
+                    <p class="product-price">$149.99</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&h=600&fit=crop" alt="Nike Dunk">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Dunk Low Retro</h3>
+                    <p class="product-category">Skateboarding</p>
+                    <p class="product-price">$129.99</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=600&h=600&fit=crop" alt="Nike Blazer">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Blazer Mid '77</h3>
+                    <p class="product-category">Lifestyle</p>
+                    <p class="product-price">$119.99</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="about" id="nosotros">
-        <div class="container">
-            <h2 class="section-title">SOMOS A&A SPORT</h2>
-            <p class="about-text">Creemos que el respeto se gana desde cómo te presentas. Nuestra pasión es proporcionarte ropa deportiva que te haga sentir confianza, rendimiento y estilo en cada movimiento.</p>
+    <section class="category-hero">
+        <div class="category-content">
+            <h2 class="category-title">HOMBRE</h2>
+            <a href="#" class="btn btn-primary">VER TODO</a>
         </div>
     </section>
 
-    <section class="contact" id="contacto">
-        <div class="container">
-            <h2 class="section-title">CONTÁCTANOS</h2>
-            <form class="contact-form">
-                <input type="text" placeholder="Nombre" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Mensaje" rows="5"></textarea>
-                <button type="submit" class="btn btn-primary">ENVIAR</button>
-            </form>
+    <section class="products-grid-alt">
+        <div class="product-row">
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1511556820780-d912e42b498c?w=600&h=600&fit=crop" alt="Pro">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Academy Pro</h3>
+                    <p class="product-price">$79.99</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1584735175315-9d5df23860e6?w=600&h=600&fit=crop" alt="Mercurial">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Mercurial Vapor</h3>
+                    <p class="product-price">$249.99</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=600&h=600&fit=crop" alt="Jordan">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Air Jordan 1</h3>
+                    <p class="product-price">$179.99</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="category-hero-women">
+        <div class="category-content">
+            <h2 class="category-title">MUJER</h2>
+            <a href="#" class="btn btn-primary">VER TODO</a>
+        </div>
+    </section>
+
+    <section class="products-grid-alt">
+        <div class="product-row">
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&h=600&fit=crop" alt="Air Max">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Air Max 90</h3>
+                    <p class="product-price">$139.99</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1584735175315-9d5df23860e6?w=600&h=600&fit=crop" alt="React">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">React Infinity</h3>
+                    <p class="product-price">$159.99</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=600&h=600&fit=crop" alt="Pegasus">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Pegasus 40</h3>
+                    <p class="product-price">$169.99</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">A&A <span>SPORT</span></div>
-                <p>© 2024 A&A SPORT. Todos los derechos reservados.</p>
-                <div class="social-links">
-                    <a href="#">Instagram</a>
-                    <a href="#">Facebook</a>
-                    <a href="#">WhatsApp</a>
-                </div>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4 class="footer-heading">AYUDA</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Estado del pedido</a></li>
+                    <li><a href="#">Envío y entrega</a></li>
+                    <li><a href="#">Devoluciones</a></li>
+                    <li><a href="#">Opciones de pago</a></li>
+                </ul>
             </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">ACERCA DE A&A</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Noticias</a></li>
+                    <li><a href="#">Carreras</a></li>
+                    <li><a href="#">Inversores</a></li>
+                    <li><a href="#">Sostenibilidad</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">ÚNETE A NOSOTROS</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Membresía</a></li>
+                    <li><a href="#">Aplicación A&A</a></li>
+                    <li><a href="#">Clubes</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 A&A SPORT. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <script>
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav').classList.toggle('active');
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.color = '#707072';
+            });
+            link.addEventListener('mouseleave', function() {
+                this.style.color = '#111111';
+            });
         });
     </script>
 </body>
