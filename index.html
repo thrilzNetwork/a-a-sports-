@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A&A SPORT - Más que una marca, una nueva historia</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">A&A <span>SPORT</span></div>
+            <nav class="nav">
+                <a href="#inicio">Inicio</a>
+                <a href="#hombres">Hombres</a>
+                <a href="#mujeres">Mujeres</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+            <button class="menu-toggle">☰</button>
+        </div>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>PASIÓN A TU MEDIDA</h1>
+            <p>Más que una marca, una nueva historia</p>
+            <a href="#productos" class="btn btn-primary">VER COLECCIÓN</a>
+        </div>
+    </section>
+
+    <section class="promo-banner">
+        <p>ENVÍO GRÁTIS EN PEDIDOS MAYORES A $50 | 🏆 LOS PARTIDOS SE JUEGAN EN LA CANCHA</p>
+    </section>
+
+    <section class="products" id="productos">
+        <div class="container">
+            <h2 class="section-title">NUESTRA COLECCIÓN</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="placeholder-img">👕</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Camiseta Atlético</h3>
+                        <p class="price">$29.99</p>
+                        <button class="btn btn-secondary">Agregar</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="placeholder-img">👖</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Pantalón Deportivo</h3>
+                        <p class="price">$49.99</p>
+                        <button class="btn btn-secondary">Agregar</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="placeholder-img">👟</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Zapatillas Running</h3>
+                        <p class="price">$89.99</p>
+                        <button class="btn btn-secondary">Agregar</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="placeholder-img">🧢</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Gorra Deportiva</h3>
+                        <p class="price">$19.99</p>
+                        <button class="btn btn-secondary">Agregar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="nosotros">
+        <div class="container">
+            <h2 class="section-title">SOMOS A&A SPORT</h2>
+            <p class="about-text">Creemos que el respeto se gana desde cómo te presentas. Nuestra pasión es proporcionarte ropa deportiva que te haga sentir confianza, rendimiento y estilo en cada movimiento.</p>
+        </div>
+    </section>
+
+    <section class="contact" id="contacto">
+        <div class="container">
+            <h2 class="section-title">CONTÁCTANOS</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Nombre" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Mensaje" rows="5"></textarea>
+                <button type="submit" class="btn btn-primary">ENVIAR</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">A&A <span>SPORT</span></div>
+                <p>© 2024 A&A SPORT. Todos los derechos reservados.</p>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
