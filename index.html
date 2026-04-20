@@ -415,13 +415,17 @@
         let selectedSize = 'M';
         let selectedQty = 1;
         
-        document.querySelectorAll('.product-card').forEach(card => {
-            card.addEventListener('click', function() {
+        // Product cards click handler
+        document.querySelectorAll('.product-card, .category-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                e.preventDefault();
                 const name = this.dataset.name || '';
                 const category = this.dataset.category || '';
                 const price = this.dataset.price || '';
                 const desc = this.dataset.desc || '';
                 const img = this.dataset.img || '';
+                
+                if (!name) return;
                 
                 document.getElementById('modalName').textContent = name;
                 document.getElementById('modalCategory').textContent = category;
