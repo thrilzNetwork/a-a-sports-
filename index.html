@@ -468,15 +468,22 @@
         // Add to cart from modal
         document.getElementById('addToCartBtn').addEventListener('click', function() {
             const name = document.getElementById('modalName').textContent;
-            const price = document.getElementById('modalPrice').textContent;
+            const category = document.getElementById('modalCategory').textContent;
+            const priceText = document.getElementById('modalPrice').textContent;
+            const price = parseFloat(priceText.replace('$', ''));
             const size = selectedSize;
             const qty = selectedQty;
+            const img = document.getElementById('modalImage').src;
             
-            cartCount += qty;
-            if (cartCountEl) {
-                cartCountEl.textContent = cartCount > 9 ? '9+' : cartCount;
-                cartCountEl.style.display = 'flex';
+            // Check if item already exists in cart
+            const existingItem = cart.find(item => item.name === name && item.size === size);
+            if (existingItem) {
+                existingItem.qty += qty;
+            } else {
+                cart.push({ name, category, price, size, qty, img });
             }
+            
+            updateCartDisplay();
             
             closeModal();
             alert(`✅ ${name}\nTalla: ${size}\nCantidad: ${qty}\n\nAgregado al carro!\n\nTotal en carro: ${cartCount} producto(s)`);
