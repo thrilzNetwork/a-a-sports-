@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A&A SPORT - Tienda de fútbol profesional. Zapatillas, uniformes y accesorios de las mejores marcas.">
+    <meta name="theme-color" content="#0047AB">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
     <title>A&A SPORT | Fútbol Profesional</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,12 +13,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-sidebar-header">
+            <h3>🛒 MI CARRO</h3>
+            <button class="cart-close" id="cartClose">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="cart-empty" id="cartEmpty">Tu carro está vacío</p>
+        </div>
+        <div class="cart-sidebar-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="btn btn-primary" id="checkoutBtn">FINALIZAR COMPRA</button>
+        </div>
+    </div>
+    <div class="cart-backdrop" id="cartBackdrop"></div>
     <div class="promo-banner">
         <p>ENVÍO GRÁTIS EN PEDIDOS MAYORES A $50 · MEMBER EXCLUSIVE: 20% DTO</p>
     </div>
 
     <header class="header">
         <div class="header-inner">
+            <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </button>
             <a href="#" class="logo">A&A<span>SPORT</span></a>
             <nav class="nav">
                 <a href="#" class="nav-link">Nuevo</a>
@@ -23,8 +49,7 @@
                 <a href="#" class="nav-link">Mujeres</a>
                 <a href="#" class="nav-link">Sale</a>
             </nav>
-            <div class="nav-icons">
-                <button class="icon-btn">
+            <button class="icon-btn">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path d="M11 21C15.4183 21 19 17.4183 19 13C19 8.58172 15.4183 5 11 5C6.58172 5 3 8.58172 3 13C3 17.4183 6.58172 21 11 21Z" stroke="currentColor" stroke-width="1.5"/>
                         <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="1.5"/>
@@ -45,6 +70,19 @@
             </div>
         </div>
     </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose">×</button>
+        <div class="mobile-menu-links">
+            <a href="#" onclick="closeMobileMenu()">Inicio</a>
+            <a href="#products" onclick="closeMobileMenu()">Zapatillas</a>
+            <a href="#products" onclick="closeMobileMenu()">Uniformes</a>
+            <a href="#products" onclick="closeMobileMenu()">Entrenamiento</a>
+            <a href="#products" onclick="closeMobileMenu()">Accesorios</a>
+            <a href="#" onclick="closeMobileMenu()">Sale</a>
+        </div>
+    </div>
 
     <section class="hero">
         <div class="hero-content">
@@ -101,19 +139,19 @@
     </section>
 
     <section class="category-section">
-        <div class="category-card">
+        <div class="category-card" data-name="Uniforme Local 2024" data-category="Uniformes - Réplica Oficial" data-price="$89.99" data-desc="Uniforme local oficial temporada 2024. Réplica de alta calidad con todos los detalles del uniforme de juego. Tela transpirable." data-img="https://i.postimg.cc/v40BQPgQ/662361085-122154044294973308-1887622339444595697-n.jpg">
             <img src="https://i.postimg.cc/v40BQPgQ/662361085-122154044294973308-1887622339444595697-n.jpg" alt="Uniformes">
             <div class="category-overlay">
                 <h3>UNIFORMES</h3>
             </div>
         </div>
-        <div class="category-card">
+        <div class="category-card" data-name="Kit Entrenamiento" data-category="Entrenamiento - Completo" data-price="$129.99" data-desc="Kit completo de entrenamiento incluyendo camiseta, shorts y medias. Material técnico de alto rendimiento." data-img="https://i.postimg.cc/k2T4nj6J/663317939-122153889578973308-9089336444004214118-n.jpg">
             <img src="https://i.postimg.cc/k2T4nj6J/663317939-122153889578973308-9089336444004214118-n.jpg" alt="Entrenamiento">
             <div class="category-overlay">
                 <h3>ENTRENAMIENTO</h3>
             </div>
         </div>
-        <div class="category-card">
+        <div class="category-card" data-name="Balón Match Pro" data-category="Accesorios - Balones" data-price="$49.99" data-desc="Balón oficial de match. Certificación FIFA. Ideal para partidos competitiva y entrenamiento." data-img="https://i.postimg.cc/XrsJV2GN/666744744-122154280466973308-5065881334465434857-n.jpg">
             <img src="https://i.postimg.cc/XrsJV2GN/666744744-122154280466973308-5065881334465434857-n.jpg" alt="Accesorios">
             <div class="category-overlay">
                 <h3>ACCESORIOS</h3>
@@ -279,6 +317,23 @@
     </div>
 
     <script>
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        
+        window.closeMobileMenu = function() {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
         // WhatsApp Chat Widget
         const waPhoneNumber = '9546488174';
         
@@ -451,22 +506,97 @@
             });
         });
 
-        // Cart functionality
+        // Cart Array
+        let cart = [];
         let cartCount = 0;
+        let cartTotal = 0;
         const cartCountEl = document.querySelector('.cart-count');
-        
-        document.querySelectorAll('.product-card').forEach(card => {
-            card.style.cursor = 'pointer';
-            card.addEventListener('click', function() {
-                cartCount++;
-                if (cartCountEl) {
-                    cartCountEl.textContent = cartCount > 9 ? '9+' : cartCount;
-                    cartCountEl.style.display = 'flex';
-                }
-                // Visual feedback
-                this.style.opacity = '0.7';
-                setTimeout(() => { this.style.opacity = '1'; }, 200);
-            });
+        const cartSidebar = document.getElementById('cartSidebar');
+        const cartBackdrop = document.getElementById('cartBackdrop');
+        const cartClose = document.getElementById('cartClose');
+        const cartItemsEl = document.getElementById('cartItems');
+        const cartEmptyEl = document.getElementById('cartEmpty');
+        const cartTotalEl = document.getElementById('cartTotal');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+
+        function updateCartDisplay() {
+            if (cart.length === 0) {
+                cartEmptyEl.style.display = 'block';
+                cartTotalEl.textContent = '$0.00';
+            } else {
+                cartEmptyEl.style.display = 'none';
+                let total = 0;
+                cartItemsEl.innerHTML = cart.map((item, index) => {
+                    total += item.price * item.qty;
+                    return `
+                        <div class="cart-item">
+                            <div class="cart-item-image">
+                                <img src="${item.img}" alt="${item.name}">
+                            </div>
+                            <div class="cart-item-details">
+                                <h4>${item.name}</h4>
+                                <p>${item.category}</p>
+                                <div class="cart-item-qty">
+                                    <button onclick="updateQty(${index}, -1)">-</button>
+                                    <span>${item.qty}</span>
+                                    <button onclick="updateQty(${index}, 1)">+</button>
+                                </div>
+                            </div>
+                            <div class="cart-item-price">$${(item.price * item.qty).toFixed(2)}</div>
+                            <div class="cart-item-remove">
+                                <button onclick="removeFromCart(${index})">Eliminar</button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                cartTotal = total;
+                cartTotalEl.textContent = '$' + total.toFixed(2);
+            }
+            cartCount = cart.reduce((sum, item) => sum + item.qty, 0);
+            if (cartCountEl) {
+                cartCountEl.textContent = cartCount > 9 ? '9+' : cartCount;
+                cartCountEl.style.display = cartCount > 0 ? 'flex' : 'none';
+            }
+        }
+
+        window.updateQty = function(index, change) {
+            cart[index].qty += change;
+            if (cart[index].qty <= 0) {
+                cart.splice(index, 1);
+            }
+            updateCartDisplay();
+        };
+
+        window.removeFromCart = function(index) {
+            cart.splice(index, 1);
+            updateCartDisplay();
+        };
+
+        function openCart() {
+            cartSidebar.classList.add('active');
+            cartBackdrop.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCart() {
+            cartSidebar.classList.remove('active');
+            cartBackdrop.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        cartClose.addEventListener('click', closeCart);
+        cartBackdrop.addEventListener('click', closeCart);
+
+        checkoutBtn.addEventListener('click', function() {
+            if (cart.length > 0) {
+                let message = 'Hola, quiero comprar:%0A';
+                cart.forEach(item => {
+                    message += `%0A- ${item.name} (${item.category})%0ATalla: ${item.size}, Cantidad: ${item.qty}%0APrecio: $${(item.price * item.qty).toFixed(2)}`;
+                });
+                message += `%0A%0ATotal: $${cartTotal.toFixed(2)}`;
+                sendToWhatsApp(message);
+                closeCart();
+            }
         });
 
         // Header icons functionality
@@ -477,25 +607,15 @@
                 const path = svg ? svg.innerHTML : '';
                 
                 if (path.includes('M11 21')) {
-                    // Search
                     const searchTerm = prompt('🔍 ¿Qué buscas?');
                     if (searchTerm) {
                         waChatBox.classList.add('active');
                         addMessage(`Busco: ${searchTerm}`);
                     }
                 } else if (path.includes('M20.84')) {
-                    // Favorites
                     alert('❤️ Tus favoritos se guardarán pronto');
                 } else if (path.includes('M3 6')) {
-                    // Cart
-                    if (cartCount > 0) {
-                        const confirmBuy = confirm(`🛒 Tienes ${cartCount} producto(s) en el carrito.\n\n¿Continuar al pago por WhatsApp?`);
-                        if (confirmBuy) {
-                            sendToWhatsApp(`Hola, quiero comprar ${cartCount} producto(s) de A&A SPORT`);
-                        }
-                    } else {
-                        alert('🛒 Tu carrito está vacío');
-                    }
+                    openCart();
                 }
             });
         });
