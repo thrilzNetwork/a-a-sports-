@@ -131,6 +131,7 @@ button {
     stroke: var(--nike-black);
     width: 20px;
     height: 20px;
+    pointer-events: none;
 }
 
 .mobile-menu-btn {
@@ -682,7 +683,8 @@ button:focus {
 }
 
 .cart-sidebar.active {
-    transform: translateX(0);
+    transform: translateX(0) !important;
+    display: flex !important;
 }
 
 .cart-backdrop {
@@ -1047,7 +1049,7 @@ button:focus {
 }
 
 .product-modal.active {
-    display: flex;
+    display: flex !important;
 }
 
 .product-modal-backdrop {

@@ -601,26 +601,34 @@
             }
         });
 
-         // Header icons functionality
-         document.querySelectorAll('.icon-btn').forEach(btn => {
-             btn.addEventListener('click', function(e) {
-                 e.stopPropagation();
-                 const svg = this.querySelector('svg');
-                 const path = svg ? svg.innerHTML : '';
-                 
-                 if (path.includes('M11 21')) {
-                     const searchTerm = prompt('🔍 ¿Qué buscas?');
-                     if (searchTerm) {
-                         waChatBox.classList.add('active');
-                         addMessage(`Busco: ${searchTerm}`);
-                     }
-                 } else if (path.includes('M20.84')) {
-                     alert('❤️ Tus favoritos se guardarán pronto');
-                 } else if (this.id === 'headerCartBtn' || path.includes('M3 6')) {
-                     openCart();
-                 }
-             });
-         });
+        // Header icons functionality
+        document.addEventListener('click', function(e) {
+            const btn = e.target.closest('.icon-btn');
+            if (!btn) return;
+
+            e.preventDefault();
+            e.stopPropagation();
+            
+            if (btn.classList.contains('cart-btn') || btn.id === 'headerCartBtn') {
+                openCart();
+                return;
+            }
+
+            const svg = btn.querySelector('svg');
+            const path = svg ? svg.innerHTML : '';
+            
+            if (path.includes('M11 21')) {
+                const searchTerm = prompt('🔍 ¿Qué buscas?');
+                if (searchTerm) {
+                    waChatBox.classList.add('active');
+                    addMessage(`Busco: ${searchTerm}`);
+                }
+            } else if (path.includes('M20.84')) {
+                alert('❤️ Tus favoritos se guardarán pronto');
+            } else if (path.includes('M3 6')) {
+                openCart();
+            }
+        });
 
         // Header scroll effect
         window.addEventListener('scroll', function() {
