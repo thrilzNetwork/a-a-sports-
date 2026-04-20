@@ -35,11 +35,12 @@
                         <path d="M20.84 20.84L20.5529 20.5529C19.7158 21.3908 18.5701 21.8494 17.4091 21.7732C16.2482 21.6971 15.1754 21.094 14.52 20.12L14.4898 20.0821C13.838 19.1165 12.7524 18.4849 11.5658 18.3758C10.3792 18.2667 9.20495 18.7063 8.42 19.55L3 24L4.55 19.3C5.3793 18.4591 5.8558 17.2991 5.852 16.1162C5.8482 14.9333 5.3637 13.7767 4.53 12.94L4.55001 12.92L20.84 20.84Z" stroke="currentColor" stroke-width="1.5"/>
                     </svg>
                 </button>
-                <button class="icon-btn">
+                <button class="icon-btn cart-btn" style="position: relative;">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path d="M3 6L6 21H21L18 6H3Z" stroke="currentColor" stroke-width="1.5"/>
                         <path d="M9 21V10C9 9.44772 9.44773 9 10 9H11C11.5523 9 12 9.44772 12 10V21" stroke="currentColor" stroke-width="1.5"/>
                     </svg>
+                    <span class="cart-count" style="display:none; position:absolute; top:-2px; right:-2px; background:#D30005; color:white; font-size:10px; font-weight:bold; width:18px; height:18px; border-radius:50%; display:flex; align-items:center; justify-content:center;">0</span>
                 </button>
             </div>
         </div>
@@ -199,5 +200,67 @@
             <p>© 2024 A&A SPORT. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // Cart functionality
+        let cartCount = 0;
+        const cartCountEl = document.querySelector('.cart-count');
+        
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', function() {
+                cartCount++;
+                if (cartCountEl) {
+                    cartCountEl.textContent = cartCount > 9 ? '9+' : cartCount;
+                    cartCountEl.style.display = 'flex';
+                }
+                // Visual feedback
+                this.style.opacity = '0.7';
+                setTimeout(() => { this.style.opacity = '1'; }, 200);
+            });
+        });
+
+        // Search button - simple alert for demo
+        document.querySelectorAll('.icon-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const svg = this.querySelector('svg');
+                if (svg && svg.innerHTML.includes('M11 21')) {
+                    alert('🔍 Búsqueda - Próximamente');
+                } else if (svg && svg.innerHTML.includes('M20.84')) {
+                    alert('❤️ Favoritos - Próximamente');
+                } else if (svg && svg.innerHTML.includes('M3 6')) {
+                    if (cartCount > 0) {
+                        alert('🛒 Tu carrito: ' + cartCount + ' producto(s)');
+                    } else {
+                        alert('🛒 Tu carrito está vacío');
+                    }
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
 </body>
 </html>

@@ -136,6 +136,10 @@ button {
     overflow: hidden;
 }
 
+.hero {
+    background: #111111;
+}
+
 .hero::before {
     content: '';
     position: absolute;
@@ -143,8 +147,8 @@ button {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%),
-                url('https://i.postimg.cc/k2JGPr4D/611306770-122141229398973308-6246825611711681184-n.jpg') center/cover no-repeat;
+    background: linear-gradient(180deg, rgba(17,17,17,0.2) 0%, rgba(17,17,17,0.8) 100%),
+                url('https://images.unsplash.com/photo-1551959839-4339539b61b5?w=1920&h=1080&fit=crop&q=85') center/cover;
     z-index: 0;
 }
 
@@ -181,7 +185,10 @@ button {
     text-transform: uppercase;
     letter-spacing: 1px;
     border-radius: 30px;
-    transition: background 0.2s ease;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
 }
 
 .btn-primary {
@@ -191,6 +198,12 @@ button {
 
 .btn-primary:hover {
     background: var(--text-secondary);
+    transform: translateY(-2px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    background: #333;
 }
 
 /* Section Titles */
