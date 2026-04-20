@@ -5,25 +5,15 @@
 }
 
 :root {
-    --brand-blue: #0047AB;
-    --brand-blue-dark: #003380;
-    --brand-blue-light: #0066CC;
     --nike-black: #111111;
     --nike-white: #FFFFFF;
-    --snow: #FAFAFA;
+    --brand-blue: #0047AB;
     --light-gray: #F5F5F5;
     --hover-gray: #E5E5E5;
-    --dark-surface: #28282A;
-    --deep-charcoal: #1F1F21;
-    --dark-hover: #39393B;
     --text-primary: #111111;
     --text-secondary: #707072;
     --text-disabled: #9E9EA0;
-    --border-primary: #707072;
     --border-secondary: #CACACB;
-    --nike-red: #D30005;
-    --link-blue: #1151FF;
-    --success-green: #007D48;
 }
 
 body {
@@ -33,6 +23,7 @@ body {
     background: var(--nike-white);
     font-size: 16px;
     font-weight: 400;
+    -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -47,14 +38,15 @@ button {
     font: inherit;
 }
 
-/* Promo Banner */
+/* Promo Banner - Nike style */
 .promo-banner {
-    background: var(--brand-blue);
+    background: var(--nike-black);
     color: var(--nike-white);
     text-align: center;
-    padding: 8px;
+    padding: 10px;
     font-size: 12px;
     font-weight: 500;
+    text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
@@ -68,7 +60,7 @@ button {
 }
 
 .header-inner {
-    max-width: 1920px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 48px;
     height: 60px;
@@ -79,7 +71,7 @@ button {
 
 .logo {
     font-family: 'Oswald', sans-serif;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
     letter-spacing: 2px;
     color: var(--brand-blue);
@@ -92,7 +84,7 @@ button {
 
 .nav {
     display: flex;
-    gap: 32px;
+    gap: 28px;
 }
 
 .nav-link {
@@ -105,17 +97,17 @@ button {
 }
 
 .nav-link:hover {
-    color: var(--brand-blue);
+    color: var(--text-secondary);
 }
 
 .nav-icons {
     display: flex;
-    gap: 16px;
+    gap: 12px;
 }
 
 .icon-btn {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -129,51 +121,18 @@ button {
 
 .icon-btn svg {
     stroke: var(--nike-black);
+    width: 20px;
+    height: 20px;
 }
 
-/* Buttons */
-.btn {
-    display: inline-block;
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 30px;
-    transition: all 0.2s ease;
-}
-
-.btn-primary {
-    background: var(--brand-blue);
-    color: var(--nike-white);
-}
-
-.btn-primary:hover {
-    background: var(--brand-blue-dark);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: var(--nike-white);
-    border: 1.5px solid var(--nike-white);
-}
-
-.btn-secondary:hover {
-    background: var(--nike-white);
-    color: var(--brand-blue);
-}
-
-/* Hero */
+/* Hero - Full bleed Nike style */
 .hero {
-    max-width: 1920px;
-    margin: 0 auto;
-    padding: 80px 48px;
+    position: relative;
     min-height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    position: relative;
     overflow: hidden;
 }
 
@@ -184,15 +143,15 @@ button {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(180deg, rgba(0,71,171,0.85) 0%, rgba(0,51,128,0.95) 100%),
-                url('https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?w=1920&h=1080&fit=crop') center/cover;
+    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%),
+                url('https://i.postimg.cc/k2JGPr4D/611306770-122141229398973308-6246825611711681184-n.jpg') center/cover no-repeat;
     z-index: 0;
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
-    max-width: 800px;
+    max-width: 600px;
 }
 
 .hero-title {
@@ -202,38 +161,56 @@ button {
     color: var(--nike-white);
     text-transform: uppercase;
     line-height: 0.90;
-    letter-spacing: 4px;
-    margin-bottom: 24px;
+    letter-spacing: 6px;
+    margin-bottom: 16px;
 }
 
 .hero-subtitle {
-    font-size: 18px;
+    font-size: 16px;
     color: var(--nike-white);
-    margin-bottom: 32px;
+    margin-bottom: 24px;
     opacity: 0.9;
+}
+
+/* Buttons - Nike pill style */
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    transition: background 0.2s ease;
+}
+
+.btn-primary {
+    background: var(--nike-black);
+    color: var(--nike-white);
+}
+
+.btn-primary:hover {
+    background: var(--text-secondary);
 }
 
 /* Section Titles */
 .section-title {
     font-family: 'Oswald', sans-serif;
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 500;
     text-transform: uppercase;
-    padding: 32px 48px 16px;
+    padding: 32px 48px 20px;
     letter-spacing: 2px;
 }
 
-/* Product Grid */
-.products-featured,
-.products-grid-alt,
-.accessories {
-    max-width: 1920px;
+/* Product Grid - Nike style tight gaps */
+.products-section {
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 48px 48px;
 }
 
-.product-grid,
-.product-row {
+.product-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
@@ -247,7 +224,6 @@ button {
     background: var(--light-gray);
     aspect-ratio: 1;
     overflow: hidden;
-    position: relative;
 }
 
 .product-img img {
@@ -258,105 +234,76 @@ button {
 }
 
 .product-card:hover .product-img img {
-    transform: scale(1.05);
-}
-
-.badge {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background: var(--brand-blue);
-    color: var(--nike-white);
-    font-size: 12px;
-    font-weight: 600;
-    padding: 4px 10px;
-    text-transform: uppercase;
+    opacity: 0.85;
 }
 
 .product-info {
-    padding: 12px 0;
+    padding: 12px 0 0;
 }
 
 .product-name {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
     color: var(--nike-black);
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 
 .product-category {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--text-secondary);
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 
 .product-price {
     font-size: 14px;
-    font-weight: 700;
-    color: var(--brand-blue);
+    font-weight: 500;
+    color: var(--nike-black);
 }
 
-.old-price {
-    text-decoration: line-through;
-    color: var(--text-secondary);
-    font-weight: 400;
-    margin-right: 8px;
+/* Category Cards - Full bleed */
+.category-section {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 48px 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
 }
 
-/* Category Hero */
-.category-hero {
-    max-width: 1920px;
-    margin: 24px auto 0;
-    padding: 80px 48px;
+.category-card {
     position: relative;
+    aspect-ratio: 4/3;
     overflow: hidden;
+    cursor: pointer;
 }
 
-.category-hero::before {
-    content: '';
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover img {
+    transform: scale(1.05);
+}
+
+.category-overlay {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    background: linear-gradient(90deg, rgba(0,71,171,0.9) 0%, rgba(0,51,128,0.7) 100%),
-                url('https://images.unsplash.com/photo-1551959839-4339539b61b5?w=1920&h=600&fit=crop') center/cover;
-    z-index: 0;
+    padding: 24px;
+    background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.7) 100%);
 }
 
-.category-hero-women {
-    max-width: 1920px;
-    margin: 24px auto 0;
-    padding: 80px 48px;
-    position: relative;
-    overflow: hidden;
-}
-
-.category-hero-women::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(90deg, rgba(0,71,171,0.9) 0%, rgba(0,51,128,0.7) 100%),
-                url('https://images.unsplash.com/photo-1510925758619-12696f5b9641?w=1920&h=600&fit=crop') center/cover;
-    z-index: 0;
-}
-
-.category-content {
-    position: relative;
-    z-index: 1;
-}
-
-.category-title {
+.category-overlay h3 {
     font-family: 'Oswald', sans-serif;
-    font-size: 48px;
-    font-weight: 700;
+    font-size: 24px;
+    font-weight: 600;
     color: var(--nike-white);
     text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 16px;
+    letter-spacing: 2px;
 }
 
 /* Footer */
@@ -366,42 +313,43 @@ button {
     margin-top: 48px;
 }
 
-.footer-grid {
-    max-width: 1920px;
+.footer-inner {
+    max-width: 1440px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 48px;
 }
 
-.footer-heading {
+.footer-col h4 {
     font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 16px;
+    color: var(--nike-black);
 }
 
-.footer-links {
+.footer-col ul {
     list-style: none;
 }
 
-.footer-links li {
-    margin-bottom: 8px;
+.footer-col li {
+    margin-bottom: 10px;
 }
 
-.footer-links a {
+.footer-col a {
     font-size: 14px;
     color: var(--text-secondary);
     transition: color 0.2s ease;
 }
 
-.footer-links a:hover {
-    color: var(--brand-blue);
+.footer-col a:hover {
+    color: var(--nike-black);
 }
 
 .footer-bottom {
-    max-width: 1920px;
+    max-width: 1440px;
     margin: 32px auto 0;
     padding-top: 32px;
     border-top: 1px solid var(--border-secondary);
@@ -415,16 +363,19 @@ button {
 /* Responsive */
 @media (max-width: 1024px) {
     .product-grid,
-    .product-row {
-        grid-template-columns: repeat(3, 1fr);
+    .category-section {
+        grid-template-columns: repeat(2, 1fr);
     }
     
-    .header-inner {
-        padding: 0 24px;
+    .header-inner,
+    .products-section,
+    .category-section {
+        padding-left: 24px;
+        padding-right: 24px;
     }
     
     .hero-title {
-        font-size: 72px;
+        font-size: 64px;
     }
 }
 
@@ -434,24 +385,20 @@ button {
     }
     
     .product-grid,
-    .product-row {
+    .category-section {
         grid-template-columns: repeat(2, 1fr);
         gap: 8px;
     }
     
     .header-inner,
-    .products-featured,
-    .products-grid-alt,
-    .accessories,
-    .hero,
-    .category-hero,
-    .category-hero-women {
+    .products-section,
+    .category-section {
         padding-left: 16px;
         padding-right: 16px;
     }
     
     .section-title {
-        padding: 24px 16px 12px;
+        padding: 24px 16px 16px;
     }
     
     .hero-title {
@@ -462,7 +409,7 @@ button {
         min-height: 400px;
     }
     
-    .footer-grid {
+    .footer-inner {
         grid-template-columns: 1fr;
         gap: 24px;
     }
@@ -470,16 +417,17 @@ button {
 
 @media (max-width: 480px) {
     .product-grid,
-    .product-row {
+    .category-section {
         grid-template-columns: 1fr;
     }
     
     .hero-title {
         font-size: 40px;
+        letter-spacing: 3px;
     }
     
-    .category-title {
-        font-size: 32px;
+    .category-section {
+        grid-template-columns: 1fr;
     }
 }
 
